@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+  background-color: #000000;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.red_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  width: 40vw;
+  background-color: #ea3938;
+  border-bottom-right-radius: 100vh;
+}
+
+.blue_box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 70vh;
+  width: 40vw;
+  background-color: #61ccd3;
+  border-top-left-radius: 100vh;
+}
+
+.center_box {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 60%;
+  background-color: #000000;
+  padding-left: 2.5rem;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.center_box::-webkit-scrollbar {
+  display: none;
+}
+
+.screen_heading {
+  color: #61ccd3;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.dropdown_section_div {
+  margin-top: 4rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.srcreen_paragraph {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.dropdown_div {
+  margin-top: 2rem;
+}
+
+#dropdown-basic-button {
+  width: 50vw;
+  background-color: #ffffff;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dropdown_items {
+  width: 50vw;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.09rem;
+}
+
+.submit_div {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5rem;
+}
+
+.submit_button {
+  background-color: #61ccd3;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
