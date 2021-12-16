@@ -10,21 +10,23 @@ export default function AlgorithmScreen () {
   //Dropdown selection state
   //Which holds the value of the user selection from the dropdown
   const [dropdownSelection, setDropdownSelection] = useState(
-    'Select The Option'
+    'Select The Algorithm'
   )
+
+  //Algoritm List
+  const algorithm = [
+    'A* Algorithm',
+    'AO* Algorithm',
+    'Minimum Cost Flow Approach'
+  ]
 
   //Submitting the user resposne
   //And move to the next page based on the response
   const submitDetails = () => {
-    if (dropdownSelection === 'Select The Option') {
+    if (dropdownSelection === 'Select The Algorithm') {
       alert('Please select the any one option from the dropdown')
     } else {
-      if (dropdownSelection === 'Default') {
-        console.log('Default')
-        navigate()
-      } else {
-        console.log('Custom')
-      }
+      navigate(`/upload-option/${dropdownSelection}`)
     }
   }
   return (
@@ -43,31 +45,24 @@ export default function AlgorithmScreen () {
           <div className='dropdown_section_div'>
             {/* Paragraph about the operations  */}
             <p className='srcreen_paragraph'>
-              Select the path selection type from the dropdown.
+              Select the algorithm from the dropdown.
             </p>
             <div className='dropdown_div'>
               <DropdownButton
                 id='dropdown-basic-button'
                 title={dropdownSelection}
               >
-                <Dropdown.Item
-                  href='#'
-                  className='dropdown_items'
-                  onClick={() => {
-                    setDropdownSelection('Default')
-                  }}
-                >
-                  Default
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href='#'
-                  className='dropdown_items'
-                  onClick={() => {
-                    setDropdownSelection('Custom')
-                  }}
-                >
-                  Custom
-                </Dropdown.Item>
+                {algorithm.map(alg => (
+                  <Dropdown.Item
+                    href='#'
+                    className='dropdown_items'
+                    onClick={() => {
+                      setDropdownSelection(alg)
+                    }}
+                  >
+                    {alg}
+                  </Dropdown.Item>
+                ))}
               </DropdownButton>
             </div>
           </div>
