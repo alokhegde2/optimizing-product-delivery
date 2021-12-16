@@ -1,12 +1,12 @@
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import React, { useState } from 'react'
-import '../styles/service_styles.css'
 import { FaArrowRight } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import '../styles/algorithm_styles.css'
 
-export default function ServiceTypeScreen () {
+export default function AlgorithmScreen () {
   //helps to navigate between the screens
-  var navigate = useNavigate();
+  var navigate = useNavigate()
   //Dropdown selection state
   //Which holds the value of the user selection from the dropdown
   const [dropdownSelection, setDropdownSelection] = useState(
@@ -21,14 +21,12 @@ export default function ServiceTypeScreen () {
     } else {
       if (dropdownSelection === 'Default') {
         console.log('Default')
-        // navigate('/algorithm')
+        navigate()
       } else {
         console.log('Custom')
-        navigate('/algorithm')
       }
     }
   }
-
   return (
     <div className='App'>
       {/* blue box  */}
