@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/upload_option_styles.css'
+import '../styles/location_form_styles.css'
 import { useParams, useNavigate } from 'react-router-dom'
 
-export default function UploadOptionScreen () {
+export default function LocationFormScreen () {
   //helps to navigate between the screens
   var navigate = useNavigate()
 
@@ -12,8 +12,8 @@ export default function UploadOptionScreen () {
   //Submitting the user resposne
   //And move to the next page based on the response
   const submitDetails = option => {
-    if (option === 'upload') {
-      alert('Under Construction')
+    if (option === 'Select The Algorithm') {
+      alert('Please select the any one option from the dropdown')
     } else {
       navigate(`/location-form/${algo}`)
     }
@@ -26,24 +26,7 @@ export default function UploadOptionScreen () {
       {/* Red box  */}
       <div className='red_box'></div>
       {/* center working space  */}
-      <div className='center_box'>
-        <div
-          className='upload_button'
-          onClick={() => {
-            submitDetails('upload')
-          }}
-        >
-          <h4 className='excel_button'>UPLOAD EXCEL</h4>
-        </div>
-        <div
-          className='fillform_button'
-          onClick={() => {
-            submitDetails('form')
-          }}
-        >
-          <h4 className='form_button'>FILL FORM</h4>
-        </div>
-      </div>
+      <div className='center_box'></div>
     </div>
   )
 }

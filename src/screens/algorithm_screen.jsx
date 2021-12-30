@@ -29,6 +29,7 @@ export default function AlgorithmScreen () {
       navigate(`/upload-option/${dropdownSelection}`)
     }
   }
+
   return (
     <div className='App'>
       {/* blue box  */}
