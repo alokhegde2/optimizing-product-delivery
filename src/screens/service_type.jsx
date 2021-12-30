@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function ServiceTypeScreen () {
   //helps to navigate between the screens
-  var navigate = useNavigate();
+  var navigate = useNavigate()
   //Dropdown selection state
   //Which holds the value of the user selection from the dropdown
   const [dropdownSelection, setDropdownSelection] = useState(
@@ -21,7 +21,7 @@ export default function ServiceTypeScreen () {
     } else {
       if (dropdownSelection === 'Default') {
         console.log('Default')
-        // navigate('/algorithm')
+        navigate('/upload-option/AO* Algorithm')
       } else {
         console.log('Custom')
         navigate('/algorithm')
