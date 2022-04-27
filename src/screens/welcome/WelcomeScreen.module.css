@@ -1,0 +1,96 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 4px 4px 9px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  width: 30vw !important;
+  padding: 2rem;
+}
+
+h5 {
+  color: #717171;
+  padding-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 2rem;
+  color: #939393;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+.upload_excel_button {
+  background-color: #ff9d9e;
+  border-radius: 10px;
+  height: 3rem;
+  width: 18rem;
+  border: none;
+  color: #ffff;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+.fill_form_button {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 3rem;
+  width: 18rem;
+  border: 2px solid #ff9d9e;
+  color: #ff9d9e;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1140px) {
+  .container {
+    width: 40vw !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    width: 60vw !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: 80vw !important;
+  }
+
+  p {
+    margin-top: 2rem;
+    color: #939393;
+  }
+  
+  .upload_excel_button {
+    height: 3rem;
+    width: 12rem;
+  }
+  
+  .fill_form_button {
+    height: 3rem;
+    width: 12rem;
+  }
+}

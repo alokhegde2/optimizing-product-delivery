@@ -1,19 +1,16 @@
-import ServiceTypeScreen from './screens/service_type';
-import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
-import AlgorithmScreen from './screens/algorithm_screen';
-import UploadOptionScreen from './screens/upload_option_screen';
-import LocationFormScreen from './screens/location_form_screen';
+import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import WelcomeScreen from './screens/welcome/WelcomeScreen';
+import FileUploadScreen from './screens/file_upload/FileUploadScreen';
 
 function App() {
   return (
-    <Router>
+    <div>
       <Routes>
-        <Route path='/' element={<ServiceTypeScreen />}/>
-        <Route path='/algorithm' element={<AlgorithmScreen />} />
-        <Route path='/upload-option/:algo' element={<UploadOptionScreen />} />
-        <Route path='/location-form/:algo' element={<LocationFormScreen />} />
+        <Route path='/' element={<WelcomeScreen />} />
+        <Route path='/file-upload' element={<FileUploadScreen />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 

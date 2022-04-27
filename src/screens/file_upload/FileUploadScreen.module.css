@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  margin: 3rem !important;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.leftContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 87vh;
+}
+
+.dropContainer {
+  display: flex;
+  border: 2px dashed #ff9d9e;
+  box-sizing: border-box;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  padding: 2rem;
+}
+
+.rightContainerCol{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightContainer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin: 2rem;
+  align-items: center;
+}
+
+.noFileContainer {
+  text-align: center;
+}
+
+.iconConatiner {
+  width: 4rem;
+  height: 4rem;
+  background: #ff9d9e;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconText {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.closeIcon {
+  size: 0.5rem;
+  cursor: pointer;
+}
+
+.submitButton {
+  display: flex;
+  align-self: center;
+  background-color: #ff9d9e;
+  height: 3.6rem;
+  width: 15rem;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+
+}
