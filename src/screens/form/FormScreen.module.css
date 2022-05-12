@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    margin: 3rem !important;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.leftContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 87vh;
+}
+
+.inputField {
+    padding: 0.8rem;
+    border: 2px solid #939393;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.addButton {
+    background-color: #ff9d9e;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.plusText {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0;
+    color: white;
+}
+
+.rightContainerCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem;
+    align-items: flex-start;
+    border: 2px solid #ff9d9e;
+    border-radius: 10px;
+}
+
+.address {
+    font-family: "Poppins", sans-serif;
+    align-self: flex-start;
+    color: #939393;
+    margin: 0;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    padding: 1px;
+    overflow: hidden;
+    word-wrap: break-word
+}
+
+.closeIcon {
+    size: 0.5rem;
+    cursor: pointer;
+}
+
+.noFileContainer {
+    text-align: center;
+}
+
+.submitButton {
+    display: flex;
+    align-self: center;
+    background-color: #ff9d9e;
+    height: 2.6rem;
+    width: 15rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    margin-top: 3rem;
+}

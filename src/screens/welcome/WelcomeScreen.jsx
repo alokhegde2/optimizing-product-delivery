@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './WelcomeScreen.module.css'
 
-export default function WelcomeScreen (params) {
+export default function WelcomeScreen(params) {
   //For navigation
   const navigate = useNavigate()
 
@@ -26,7 +26,9 @@ export default function WelcomeScreen (params) {
         >
           Upload Excel
         </button>
-        <button onClick={() => {}} className={styles.fill_form_button}>
+        <button onClick={() => {
+          navigate('/form')
+        }} className={styles.fill_form_button}>
           Fill Form
         </button>
       </div>

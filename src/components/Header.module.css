@@ -1,0 +1,18 @@
+.header {
+    background-color: #ffff;
+    height: 3.5rem;
+    box-shadow: 4px 4px 9px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerText {
+    font-family: "Poppins", sans-serif;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
