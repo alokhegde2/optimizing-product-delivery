@@ -43,7 +43,7 @@ async def upload_file():
 @upload.route('/upload_form', methods=["POST"])
 async def upload_form():
     # Getting address from the request body
-    
+
     address = request.json["address"]
 
     # Here opdData is the data format which will be got saved in the database
@@ -52,24 +52,36 @@ async def upload_form():
         "datatype": "form",
         "data": address
     }
+    
+    
+    # Refined list ; Created because the data coming from the ui has some extra fields
+    # To remove those fields and to keep only usefull fields
+    
+    refList = []
+    
+    for i in address:
+        refList.append(i["address"])
+    
+    
 
-    try:
-        # Here we are  running querry to insert data to the databse
+    # TODO: Uncomment to save data to the data base
+    # try:
+    #     # Here we are  running querry to insert data to the databse
 
-        dataId = mongoClient.db.OPD_Data.insert_one(opdData)
-    except Exception as e:
+    #     dataId = mongoClient.db.OPD_Data.insert_one(opdData)
+    # except Exception as e:
 
-        # Catching exception which will be raised during insert operation
+    #     # Catching exception which will be raised during insert operation
 
-        return jsonify(
-            message="Error Occured",
-            error=e,
-        ), 400
+    #     return jsonify(
+    #         message="Error Occured",
+    #         error=e,
+    #     ), 400
 
     # If data got stored properly in database, Returning the id of the document to the insterface for future reference
 
     return jsonify(
-        documentId=str(dataId.inserted_id)
+        documentId="str(dataId.inserted_id)"
     ), 200
 
     # # place= 'Attavar'
