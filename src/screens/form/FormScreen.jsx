@@ -10,6 +10,8 @@ function FormScreen (params) {
 
   var [addressField, setAddressField] = useState('')
 
+  var [buttonText, setButtonText] = useState('Submit')
+
   const [mapAddress, setMapAddress] = useState([])
 
   const addAddress = add => {
@@ -43,8 +45,11 @@ function FormScreen (params) {
   useEffect(() => {})
 
   const submitForm = async () => {
+    setButtonText("Submitting...")
     if (address.length < 2) {
       alert('Enter atleast 2 locations before submitting')
+      setButtonText("Submit")
+      return
     }
 
     var response = await fetch('http://127.0.0.1:5000/upload_form', {
@@ -59,11 +64,12 @@ function FormScreen (params) {
     var responseData = await response.json()
 
     if (response.status === 200) {
-      console.log(responseData.documentId)
-      alert('Done')
+      window.open(responseData["url"], "_blank");
     } else {
       alert('Some error occured')
     }
+
+    setButtonText("Submit")
   }
 
   return (
@@ -115,7 +121,7 @@ function FormScreen (params) {
                 submitForm()
               }}
             >
-              <span>Submit</span>
+              <span>{buttonText}</span>
             </div>
           </Col>
         ) : (

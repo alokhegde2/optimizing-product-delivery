@@ -1,12 +1,15 @@
 # This is the main file please write all your codes here by cloning this repo
+import os
 from flask import Flask, request, jsonify
 import flask
 from routes.upload import upload
 from database import mongoClient
 
+UPLOAD_FOLDER = os.path.dirname(__file__)+"\\files"
 
 # Init app
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #Connecting to database
 
