@@ -14,9 +14,7 @@ upload = Blueprint('upload', __name__)
 ALLOWED_EXTENSIONS = {'csv'}
 
 # Uploading file url
-# This route to upload file which is majorly in xlsx or csv format
-# This is not yet done
-# I'm planing to keep this for future scope
+# This route to upload file which is majorly in  csv format
 
 
 def allowed_file(filename):
@@ -190,30 +188,6 @@ async def upload_form():
 
     url = "https://www.google.com/maps/dir/"+link
 
-    # TODO: Uncomment to save data to the data base
-    # try:
-    #     # Here we are  running querry to insert data to the databse
-
-    #     dataId = mongoClient.db.OPD_Data.insert_one(opdData)
-    # except Exception as e:
-
-    #     # Catching exception which will be raised during insert operation
-
-    #     return jsonify(
-    #         message="Error Occured",
-    #         error=e,
-    #     ), 400
-
-    # If data got stored properly in database, Returning the id of the document to the insterface for future reference
-
     return jsonify(
         url=url
     ), 200
-
-    # # place= 'Attavar'
-    # # res =  requests.get("https://api.mapbox.com/geocoding/v5/mapbox.places/"+place+".json?limit=2&access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg")
-    # # data =  res.json();
-    # # # print()
-    # # cordinates = data["features"][1]["geometry"]["coordinates"]
-    # res = requests.get("https://api.mapbox.com/optimized-trips/v1/mapbox/driving-traffic/74.836152,12.890433;74.838805,12.885046;74.84764,12.861803?access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg")
-    # data =  res.json();
