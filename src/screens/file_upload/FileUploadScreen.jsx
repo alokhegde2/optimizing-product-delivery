@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react'
 import Close from '../../assets/images/Close.png'
 import Header from '../../components/Header'
 
-export default function FileUploadScreen(params) {
+export default function FileUploadScreen (params) {
   const [uploadedFile, setFile] = useState('')
   //On drop handler
   const onDrop = useCallback(acceptedFiles => {
@@ -15,9 +15,33 @@ export default function FileUploadScreen(params) {
   }, [])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
+  const uploadFile = async () => {
+    if (uploadedFile !== '') {
+      const formData = new FormData()
+
+      console.log(uploadedFile[0])
+
+      formData.append('file', uploadedFile[0])
+
+      const response = await fetch('http://127.0.0.1:5000/upload_file', {
+        method: 'POST',
+
+        body: formData
+      })
+
+      var responseData = await response.json()
+
+      if (response.status === 200) {
+        window.open(responseData['url'], '_blank')
+      } else {
+        alert('Some error occured')
+      }
+    }
+  }
+
   return (
     <div>
-      <Header title="Upload File" />
+      <Header title='Upload File' />
       <Row className={styles.container}>
         <Col md={6} className={styles.leftContainer}>
           {/* Drag and drop functionality  */}
@@ -60,7 +84,12 @@ export default function FileUploadScreen(params) {
               ) : null}
             </div>
 
-            <div className={styles.submitButton}>
+            <div
+              className={styles.submitButton}
+              onClick={() => {
+                uploadFile()
+              }}
+            >
               <span>Submit</span>
             </div>
           </Col>
