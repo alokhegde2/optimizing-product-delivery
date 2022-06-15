@@ -62,7 +62,42 @@ async def upload_form():
     for i in address:
         refList.append(i["address"])
     
+    N=[]
+    E=[]
+        
+        
+    for i in lst:
+        url = "https://api.mapbox.com/geocoding/v5/mapbox.places/"+i+".json?access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg"
+        response = requests.request("GET",url ).json()
+        #print(response["features"][2]['geometry']['coordinates'])
+        N.append(response["features"][2]['geometry']['coordinates'][1])
+        E.append(response["features"][2]['geometry']['coordinates'][0])
     
+    opt_url = ''
+    for i in range(len(N)):
+        opt_url+=str(E[i])+','+str(N[i])+';'
+    opt_url=opt_url[:-1]
+    url = "https://api.mapbox.com/optimized-trips/v1/mapbox/driving/"+opt_url+"?access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg"
+    #print(url)
+    response = requests.request("GET",url ).json()
+    #print(response)
+
+    ans=[]
+    for i in range(len(N)):
+        ans.append((lst[i], response['waypoints'][i]['waypoint_index']))
+    def Sort_Tuple(tup):
+        return(sorted(tup, key = lambda x: x[1])) 
+    sorted_tuple = Sort_Tuple(ans)
+    sorted_place=[]
+    for i in sorted_tuple:
+        sorted_place.append(i[0])
+    print(sorted_place)
+
+    link = ''
+    for i in sorted_place:
+        link+=i+'/'
+    url = "https://www.google.com/maps/dir/"+link
+    print(url)
 
     # TODO: Uncomment to save data to the data base
     # try:
@@ -81,7 +116,7 @@ async def upload_form():
     # If data got stored properly in database, Returning the id of the document to the insterface for future reference
 
     return jsonify(
-        documentId="str(dataId.inserted_id)"
+        documentId=url
     ), 200
 
     # # place= 'Attavar'
