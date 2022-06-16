@@ -64,7 +64,7 @@ async def upload_file():
             ".json?access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg"
         response = requests.request("GET", url).json()
         
-        print(response)
+        # print(response)
         N.append(response["features"][0]['geometry']['coordinates'][1])
         E.append(response["features"][0]['geometry']['coordinates'][0])
 
@@ -146,8 +146,8 @@ async def upload_form():
             ".json?access_token=pk.eyJ1IjoiYWxsZW5wZXRlciIsImEiOiJjbDJqN2V4eWYwdTR4M2pwOThpaXkxdnZ0In0.pmQrDt3zVDstenMMZF5xvg"
         response = requests.request("GET", url).json()
         # print(response["features"][2]['geometry']['coordinates'])
-        N.append(response["features"][2]['geometry']['coordinates'][1])
-        E.append(response["features"][2]['geometry']['coordinates'][0])
+        N.append(response["features"][0]['geometry']['coordinates'][1])
+        E.append(response["features"][0]['geometry']['coordinates'][0])
 
     opt_url = ''
 
